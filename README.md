@@ -88,3 +88,9 @@ transformString("Oranges"); // Output: "115 103 110 97 114 111 79"
 transformString("Pizza"); // Output: "80 105 122 122 97"
 transformString("Chocolate Chip Cookie"); // Output: "101 107 111 111 67 32 112 105 104 67 32 101 116 97 108 111 99 111 104 67"
 transformString("Steak"); // Output: "80 107 97 101 84"
+
+
+## Introduction
+
+The Interactive Photo Gallery project is a web application that showcases an image gallery with interactive hover effects. Additionally, this repository includes two coding challenges: one for array manipulation and another for string transformation.
+
