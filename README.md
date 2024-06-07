@@ -89,8 +89,25 @@ transformString("Pizza"); // Output: "80 105 122 122 97"
 transformString("Chocolate Chip Cookie"); // Output: "101 107 111 111 67 32 112 105 104 67 32 101 116 97 108 111 99 111 104 67"
 transformString("Steak"); // Output: "80 107 97 101 84"
 
+##  Setup Instructions
+Clone the repository:
+git clone https://github.com/habibundayishimiye/interactive-photo-gallery
 
-## Introduction
+Navigate to the project directory:
+cd interactive-photo-gallery
 
-The Interactive Photo Gallery project is a web application that showcases an image gallery with interactive hover effects. Additionally, this repository includes two coding challenges: one for array manipulation and another for string transformation.
+
+##  Contributing
+Fork the repository.
+Create a new branch (git checkout -b feature/your-feature).
+Commit your changes (git commit -m 'Add some feature').
+Push to the branch (git push origin feature/your-feature).
+Open a pull request.
+
+##  Additional Information
+The image gallery includes hover effects for image details.
+The coding challenges are solved in the challenges/ directory.
+
+##  License
+This project is licensed under the MIT License.
 
