@@ -1,142 +1,153 @@
 @import url('https://fonts.cdnfonts.com/css/d-din');
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
 
-  body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000;
-  }
+/* Reset margin and padding for all elements, set box-sizing to border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .image-gallery {
-    display: flex;
-    flex-direction: row;
-    column-gap: 2px;
-    width: 80%;
-    height: 85%;
-  }
+/* Style the body to center the gallery and set font and background */
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #000;
+}
 
-  .image-container {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    position: relative;
-    display: flex;
-    width: 25%;
-    height: 100%; 
-    overflow: hidden; 
-    transition: all 0.5s ease-in-out; 
-  }
+/* Main gallery container */
+.image-gallery {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2px;
+  width: 80%;
+  height: 85%;
+}
 
-  .image-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); 
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out; 
-    z-index: 1; 
-  }
+/* Individual image container */
+.image-container {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  display: flex;
+  width: 25%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
 
-  .image-container:hover::before {
-    opacity: 0.7; 
-  }
+/* Dark overlay on hover */
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1;
+}
 
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: filter 0.5s ease-in-out, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1); /* Include transform transition */
-  }
+.image-container:hover::before {
+  opacity: 0.7;
+}
 
-  .image-container:hover img {
-    filter: blur(5px) grayscale(100%); /* Apply blur effect to the image on hover */
-    transform: scale(1.1);
-  }
+/* Style the image and add transition effects */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.5s ease-in-out, transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 
-  .overlay {
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
-    position: absolute;
-    transition: opacity 0.3s, transform 0.3s;
-    top: 0;
-    left: 0;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: end;
-    padding: 40px;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    text-align: start;
-    opacity: 1; /* Start with opacity 0 */
-    transform: translateY(20px); 
-  }
+.image-container:hover img {
+  filter: blur(5px) grayscale(100%);
+  transform: scale(1.1);
+}
 
-  .image-container:hover .overlay {
-    opacity: 1; 
-    transform: translateY(0); 
-  }
+/* Overlay for text and links */
+.overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7));
+  position: absolute;
+  transition: opacity 0.3s, transform 0.3s;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: end;
+  padding: 40px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: start;
+  opacity: 1;
+  transform: translateY(20px);
+}
 
-  .image-title {
-    margin-bottom: 8px;
-    display: inline-block;
-    overflow-wrap: break-word;
-    font-family: 'D-DIN Condensed', sans-serif;
-    font-weight: 600;
-    font-size: 36px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-  }
+.image-container:hover .overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .image-location {
-    opacity: 0.7;
-    font-weight: 400;
-    font-size: 12px;
-    text-transform: capitalize;
-    color: #FFFFFF;
-  }
+/* Style for the image title */
+.image-title {
+  margin-bottom: 8px;
+  display: inline-block;
+  overflow-wrap: break-word;
+  font-family: 'D-DIN Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
 
+/* Style for the location text */
+.image-location {
+  opacity: 0.7;
+  font-weight: 400;
+  font-size: 12px;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+/* Style for the 'Know more' link */
+.more-info {
+  display: none;
+  margin-top: 8px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #66ffff;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.more-info::after {
+  content: "\2192";
+  margin-left: 5px;
+}
+
+.image-container:hover .more-info {
+  display: block;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .image-title,
+  .image-location,
   .more-info {
     display: none;
-    margin-top: 8px;
-    font-weight: 400;
-    font-size: 14px;
-    color: #66ffff;
-    text-decoration: none;
-    transition: 0.3s ease-in-out;
   }
-
-  .more-info::after {
-    content: "\2192"; 
-    margin-left: 5px; 
-  }
-
   .image-container:hover .more-info {
-    display: block;
+    display: none;
   }
-
-  /* Responsive styles */
-  @media (max-width: 768px) {
-    .image-title,
-    .image-location,
-    .more-info {
-      display: none;
-    }
-    .image-container:hover .more-info {
-      display: none;
-    }
-    .image-gallery {
-        margin: 0 4px;
-        width: 100%;
-    }
+  .image-gallery {
+    margin: 0 4px;
+    width: 100%;
   }
+}
